@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
                 helperText: 'Input dengan angka.',
                 suffixText: 'Centimeter',
                 icon: Icon(Icons.edit),
-                border: OutlineInputBorder(),
               ),
               maxLength: 4,
               keyboardType: TextInputType.number,
