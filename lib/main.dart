@@ -19,7 +19,25 @@ class MyApp extends StatelessWidget {
           title: const Text('Aplikasi 3SIC2'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: const Text('ini adalah body'),
+        body: Column(
+          children: [
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Nilai Pajang',
+                hintText: '0',
+                helperText: 'Input dengan angka.',
+                suffixText: 'Centimeter',
+                icon: Icon(Icons.edit),
+                border: OutlineInputBorder(),
+              ),
+              maxLength: 4,
+              keyboardType: TextInputType.number,
+            ),
+            Text('2'),
+            Text('3'),
+            Text('4'),
+          ],
+        ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           items: const [
