@@ -19,23 +19,48 @@ class MyApp extends StatelessWidget {
           title: const Text('Aplikasi 3SIC2'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: Column(
-          children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Nilai Pajang',
-                hintText: '0',
-                helperText: 'Input dengan angka.',
-                suffixText: 'Centimeter',
-                icon: Icon(Icons.edit),
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Nilai Panjang',
+                  hintText: '0',
+                  helperText: 'Input dengan angka.',
+                  suffixText: 'Centimeter',
+                  icon: Icon(Icons.edit),
+                ),
+                maxLength: 4,
+                keyboardType: TextInputType.number,
               ),
-              maxLength: 4,
-              keyboardType: TextInputType.number,
-            ),
-            Text('2'),
-            Text('3'),
-            Text('4'),
-          ],
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Nilai Lebar',
+                  hintText: '0',
+                  helperText: 'Input dengan angka.',
+                  suffixText: 'Centimeter',
+                  icon: Icon(Icons.edit),
+                ),
+                maxLength: 4,
+                keyboardType: TextInputType.number,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Luas'),
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Hasil Luas',
+                  hintText: '0',
+                  helperText: 'Rumus PxL',
+                  suffixText: 'Centimeter',
+                  icon: Icon(Icons.find_in_page),
+                ),
+                readOnly: true,
+              ),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
