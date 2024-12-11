@@ -9,6 +9,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController nilaiPanjang = TextEditingController();
+    TextEditingController nilaiLebar = TextEditingController();
+    TextEditingController hasilLuas = TextEditingController();
+
     return MaterialApp(
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
@@ -23,7 +27,15 @@ class MyApp extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
+              const Text(
+                'Hitung Persegi Panjang',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               TextFormField(
+                controller: nilaiPanjang,
                 decoration: const InputDecoration(
                   labelText: 'Nilai Panjang',
                   hintText: '0',
@@ -35,6 +47,7 @@ class MyApp extends StatelessWidget {
                 keyboardType: TextInputType.number,
               ),
               TextFormField(
+                controller: nilaiLebar,
                 decoration: const InputDecoration(
                   labelText: 'Nilai Lebar',
                   hintText: '0',
@@ -46,10 +59,16 @@ class MyApp extends StatelessWidget {
                 keyboardType: TextInputType.number,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  double xhasil = 0;
+                  xhasil = double.parse(nilaiPanjang.text) *
+                      double.parse(nilaiLebar.text);
+                  hasilLuas.text = xhasil.toString();
+                },
                 child: const Text('Luas'),
               ),
               TextFormField(
+                controller: hasilLuas,
                 decoration: const InputDecoration(
                   labelText: 'Hasil Luas',
                   hintText: '0',
